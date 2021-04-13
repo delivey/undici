@@ -38,7 +38,7 @@
     "coverage": "standard | snazzy && tap test/*.js",
     "coverage:ci": "npm run coverage -- --coverage-report=lcovonly",
     "prebench": "node -e \"try { require('fs').unlinkSync(require('path').join(require('os').tmpdir(), 'undici.sock')) } catch (_) {}\"",
-    "bench": "npx concurrently -k -s first \"node benchmarks/server.js\" \"node -e 'setTimeout(() => {}, 1000)' && node benchmarks\"",
+    "bench": "npx concurrently -k -s first \"node benchmarks/server.js\" \"node -e 'setTimeout(() => {}, 1000)' && node --experimental-wasm-simd benchmarks\"",
     "serve:website": "docsify serve .",
     "prepare": "husky install"
   },
